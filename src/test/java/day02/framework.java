@@ -13,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -30,7 +31,9 @@ public class framework {
 	public static void browser(String browservalue) {
 		switch (browservalue) {
 		case "chrome":
-			driver=new ChromeDriver();
+			ChromeOptions opt=new ChromeOptions();
+			opt.addArguments("--remote-allow-origins=*");
+			driver=new ChromeDriver(opt);
 			test.log(LogStatus.INFO, "open chrome browser");
 			break;
 		case "edge":
@@ -66,16 +69,17 @@ public class framework {
 	public static void seldropdownbyindex(String Xpathvalue,int datavalue,String fieldname) {
 		Select dropdown=new Select(driver.findElement(By.xpath(Xpathvalue)));
 		dropdown.selectByIndex(datavalue);
-		test.log(LogStatus.INFO, "user selected dropdown in "+fieldname+"as"+datavalue);
+		test.log(LogStatus.INFO, "user selected dropdown of "+fieldname+" from "+datavalue+" index");
 		}
 	public static void seldropdownbyvalue(String Xpathvalue,String datavalue,String fieldname) {
 		Select dropdown=new Select(driver.findElement(By.xpath(Xpathvalue)));
 		dropdown.selectByValue(datavalue);
+		test.log(LogStatus.INFO, "user selected dropdown of "+fieldname+" by the value of "+datavalue);
 	}
 	public static void seldropdownbytext(String Xpathvalue,String datavalue,String fieldname) {
 		Select dropdown=new Select(driver.findElement(By.xpath(Xpathvalue)));
 		dropdown.selectByVisibleText(datavalue);
-		test.log(LogStatus.INFO,"user selected dropdown in"+ fieldname+"as"+datavalue);
+		test.log(LogStatus.INFO,"user selected dropdown of "+ fieldname+" as "+datavalue+" by visible text");
 	}
 	public static void windowmax() {
 		driver.manage().window().maximize();
@@ -91,19 +95,23 @@ public class framework {
 	}
 	public static void browserback() {
 		driver.navigate().back();
-		test.log(LogStatus.INFO,"page is move backward");
+		test.log(LogStatus.INFO,"browser is move backward");
 	}
 	public static void browserforward() {
 		driver.navigate().forward();
+		test.log(LogStatus.INFO,"browser is move forward");
 	}
 	public static void browserrefresh() {
 		driver.navigate().refresh();
+		test.log(LogStatus.INFO,"browser is refreshed");
 	}
 	public static void close() {
 		driver.close();
+		test.log(LogStatus.INFO,"browser is closed");
 	}
 	public static void quit() {
 		driver.quit();
+		test.log(LogStatus.INFO,"browser is quit");
 	}
 	public static String getpagetitle() {
 		 return driver.getTitle();
@@ -113,9 +121,11 @@ public class framework {
 	}
 	public static void alertok() {
 		driver.switchTo().alert().accept();
+		test.log(LogStatus.INFO,"browser is switched to alertbox and accepted");
 	}
 	public static void alertcancel() {
 		driver.switchTo().alert().dismiss();
+		test.log(LogStatus.INFO,"browser is switched to alertbox and dismissed");
 	}
 	public static void typeinalert(String datavalue,String fieldname) {
 		driver.switchTo().alert().sendKeys(datavalue);
@@ -130,23 +140,28 @@ public class framework {
 	public static String windowhandle() {
 		return driver.getWindowHandle();
 	}
-	public static void framebynameid(String nameid) {
+	public static void framebynameid(String nameid,String fieldname) {
 		driver.switchTo().frame(nameid);
+		test.log(LogStatus.INFO,"browser is switched to frame of "+fieldname+" of "+nameid);
 	}
 	public static void framebyindex(int index) {
 		driver.switchTo().frame(index);
+		test.log(LogStatus.INFO,"browser is switched to frame by index number as "+index);
 	}
 	public static void framebyxpath(String xpathvalue) {
 		driver.switchTo().frame(driver.findElement(By.xpath(xpathvalue)));
+		test.log(LogStatus.INFO,"browser is switched to frame by xpath");
 	}
 	public static void mainframe() {
 		driver.switchTo().defaultContent();
+		test.log(LogStatus.INFO,"browser is switched to default content");
 	}
-	public static void ActionDropDown(String src,String target)  {
+	public static void ActionDragDrop(String src,String target,String sourcename,String targetname)  {
 		Actions act=new Actions(driver);
 		WebElement src1=driver.findElement(By.xpath(src));
 		WebElement target1=driver.findElement(By.xpath(target));
 		act.dragAndDrop(src1, target1).build().perform();
+		test.log(LogStatus.INFO,"user drag the "+sourcename+" and drop in to the "+targetname);
 	}
 	public static void Actiondoubleclick(String xpathvalue,String fieldname) {
 		Actions act=new Actions(driver);
@@ -154,25 +169,29 @@ public class framework {
 		act.doubleClick(src).build().perform();
 		test.log(LogStatus.INFO,"user double clicked the "+fieldname);
 	}
-	public static void Actionnormalclick(String xpathvalue) {
+	public static void Actionnormalclick(String xpathvalue,String fieldname) {
 		Actions act=new Actions(driver);
 		WebElement src=driver.findElement(By.xpath(xpathvalue));
 		act.click(src).build().perform();
+		test.log(LogStatus.INFO,"user clicked the "+fieldname+" button");
 	}
-	public static void Actionrightclick(String xpathvalue) {
+	public static void Actionrightclick(String xpathvalue,String fieldname) {
 		Actions act=new Actions(driver);
 		WebElement src=driver.findElement(By.xpath(xpathvalue));
 		act.contextClick(src).build().perform();
+		test.log(LogStatus.INFO,"user rightclick the "+fieldname+" button");
 	}
 	public static void screenshot(String filename) throws IOException {
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File des=new File("./screenshot/"+filename+".png");
 		FileUtils.copyFile(src, des);
+		test.log(LogStatus.INFO,"browser take the screenshot");
 	}
-	public static void actionmousehover(String xpathvalue) {
+	public static void actionmousehover(String xpathvalue,String fieldname) {
 		Actions act=new Actions(driver);
 		WebElement src=driver.findElement(By.xpath(xpathvalue));
-		act.moveToElement(src).build().perform();;
+		act.moveToElement(src).build().perform();
+		test.log(LogStatus.INFO,"user hovered the mouse to "+fieldname);
 	}
 	public static List<String> Webtable(String Xpathvalue){
 		List<WebElement> rowcolumn=driver.findElements(By.xpath(Xpathvalue));
