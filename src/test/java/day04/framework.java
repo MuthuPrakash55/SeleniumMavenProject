@@ -203,6 +203,7 @@ public class framework {
 			rowcolumnlist.add(name.getText());
 		}
 		System.out.println(rowcolumnlist);
+		test.log(LogStatus.INFO, "user get all the values "+fieldname);
 }
 	public static void startReport(String filename) {
 		report=new ExtentReports(".\\src\\test\\resources\\"+filename+".html");

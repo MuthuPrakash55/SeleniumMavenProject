@@ -10,6 +10,7 @@ public class project extends framework {
 		
 		appurl("https://accounts.google.com/signup");		
 		typeinput("firstname");
+		screenshot("firstname");
 		typeinput("lastname");
 		click("showpassword");
 		clearall("firstname");
