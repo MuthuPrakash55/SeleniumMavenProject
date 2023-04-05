@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-03T10:47:17 IST" name="Default suite" finished-at="2023-04-03T10:47:45 IST" duration-ms="28394">
+  <suite started-at="2023-04-05T17:37:28 IST" name="Suite" finished-at="2023-04-05T17:37:36 IST" duration-ms="8156">
     <groups>
     </groups>
-    <test started-at="2023-04-03T10:47:17 IST" name="Default test" finished-at="2023-04-03T10:47:45 IST" duration-ms="28394">
-      <class name="day06.practice1">
-        <test-method is-config="true" signature="browserurl()[pri:0, instance:day06.practice1@27462a88]" started-at="2023-04-03T10:47:17 IST" name="browserurl" finished-at="2023-04-03T10:47:35 IST" duration-ms="18358" status="PASS">
+    <test started-at="2023-04-05T17:37:28 IST" name="Test" finished-at="2023-04-05T17:37:36 IST" duration-ms="8156">
+      <class name="day08.program01">
+        <test-method signature="testcase(java.lang.String,java.lang.String)[pri:0, instance:day08.program01@1e04fa0a]" started-at="2023-04-05T17:37:28 IST" name="testcase" finished-at="2023-04-05T17:37:36 IST" duration-ms="8122" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[vijay]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[prakash]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- browserurl -->
-        <test-method signature="register()[pri:1, instance:day06.practice1@27462a88]" started-at="2023-04-03T10:47:35 IST" name="register" finished-at="2023-04-03T10:47:42 IST" duration-ms="6708" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- register -->
-        <test-method signature="register()[pri:1, instance:day06.practice1@27462a88]" started-at="2023-04-03T10:47:42 IST" name="register" finished-at="2023-04-03T10:47:45 IST" duration-ms="2886" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- register -->
-        <test-method signature="mousehover()[pri:2, instance:day06.practice1@27462a88]" started-at="2023-04-03T10:47:45 IST" name="mousehover" finished-at="2023-04-03T10:47:45 IST" duration-ms="155" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- mousehover -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:day06.practice1@27462a88]" started-at="2023-04-03T10:47:45 IST" name="quit" finished-at="2023-04-03T10:47:45 IST" duration-ms="247" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quit -->
-      </class> <!-- day06.practice1 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- testcase -->
+      </class> <!-- day08.program01 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

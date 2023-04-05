@@ -2,13 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
+    <parameter name="firstname" value="vijay"/>
+    <parameter name="lastname" value="prakash"/>
     <classes>
-      <class name="day06.practice2">
+      <class name="day08.program01">
         <methods>
-          <include name="browserurl1"/>
-          <include name="register1"/>
+          <include name="testcase"/>
         </methods>
-      </class> <!-- day06.practice2 -->
+      </class> <!-- day08.program01 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
