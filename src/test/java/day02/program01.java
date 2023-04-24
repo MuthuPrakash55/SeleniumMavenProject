@@ -1,7 +1,5 @@
 package day02;
 
-import javax.naming.ldap.StartTlsRequest;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="day06.practice1">
+      <class name="practice.testng">
         <methods>
-          <include name="mousehover"/>
-          <include name="quit"/>
-          <include name="browserurl"/>
+          <include name="before"/>
+          <include name="login"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- day06.practice1 -->
+      </class> <!-- practice.testng -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

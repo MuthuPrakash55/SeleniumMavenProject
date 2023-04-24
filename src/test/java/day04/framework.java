@@ -175,7 +175,7 @@ public class framework {
 	public static void Actionnormalclick(String fieldname) throws Exception {
 		Actions act=new Actions(driver);
 		WebElement src=driver.findElement(By.xpath(getxpath(fieldname)));
-		act.click(src).build().perform();
+		act.click(src).perform();
 		test.log(LogStatus.INFO,"user clicked the "+fieldname+" button");
 	}
 	public static void Actionrightclick(String fieldname) throws Exception {
