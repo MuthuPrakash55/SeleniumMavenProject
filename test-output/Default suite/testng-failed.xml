@@ -6,7 +6,7 @@
       <class name="practice.testng">
         <methods>
           <include name="before"/>
-          <include name="login"/>
+          <include name="login" invocation-numbers="1"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- practice.testng -->

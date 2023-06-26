@@ -12,7 +12,7 @@ public class program04 {
 	}
 
 	public static void main(String[] args) {
-		program04 pro=new program04(20,30);
+		program04 pro=new program04(30,40);
 		System.out.println(pro.a+pro.b);
 	}
 
