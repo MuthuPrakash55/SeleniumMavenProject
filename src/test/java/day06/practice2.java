@@ -16,9 +16,10 @@ public class practice2 {
 		driver=new ChromeDriver();
 		driver.get("https://www.amazon.in/");
 	}
-	@Test(priority = 3)
+	@Test(priority = 3,invocationCount = 2)
 	public void register1() {
 		WebElement search=driver.findElement(By.xpath("//input[@type=\"text\"]"));
+		search.clear();
 		search.sendKeys("python"+Keys.ENTER);
 		
 	}

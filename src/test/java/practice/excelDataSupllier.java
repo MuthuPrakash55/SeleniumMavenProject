@@ -12,7 +12,7 @@ import org.testng.annotations.DataProvider;
 public class excelDataSupllier {
 	
 	@DataProvider(name="login")
-	public static String[][ ]getexceldata() throws Exception  {
+	public static String[][]getexceldata() throws Exception  {
 		File file=new File("./src/test/java/practice/datasheet.xlsx");
 		FileInputStream stream=new FileInputStream(file);
 		XSSFWorkbook wb=new XSSFWorkbook(stream);

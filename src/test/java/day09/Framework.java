@@ -20,8 +20,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class Framework {
-	static WebDriver driver;
-	public static void browser(String browservalue) {
+	public static WebDriver driver;
+	public static  WebDriver browser(String browservalue) {
 		switch (browservalue) {
 		case "chrome":
 			driver=new ChromeDriver();
@@ -36,6 +36,7 @@ public class Framework {
 			driver=new InternetExplorerDriver();
 			break;
 		}
+		return driver;
 	}
 	public static void appurl(String url) {
 		driver.get(url);

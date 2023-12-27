@@ -27,13 +27,13 @@ public class test {
 				"./src/test/resources/extentreport.html");
 	}
 	@Test(dataProvider = "login",dataProviderClass = excelDataSupllier.class)
-	public void login(String username,String password) throws Exception {
+	public void login(String uname,String pword) throws Exception {
 		test=report.startTest("login", "user can able to login");
 		driver=new ChromeDriver();
 		driver.get("https://demo.guru99.com/V1/index.php");
-		driver.findElement(By.xpath("//input[@name=\"uid\"]")).sendKeys(username);
+		driver.findElement(By.xpath("//input[@name=\"uid\"]")).sendKeys(uname);
 		test.log(LogStatus.INFO,"user is able to enter name",test.addScreenCapture(capturescreen(driver, "image2")));
-		driver.findElement(By.xpath("//input[@name=\"password\"]")).sendKeys(password);
+		driver.findElement(By.xpath("//input[@name=\"password\"]")).sendKeys(pword);
 		test.log(LogStatus.INFO,"user is able to enter password",test.addScreenCapture(capturescreen(driver, "image")));
 		driver.findElement(By.xpath("//input[@name=\"btnLogin\"]")).click();
 		test.log(LogStatus.INFO, "test is passed"+test.addScreenCapture(capturescreen(driver,"image1")));

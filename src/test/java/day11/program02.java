@@ -19,12 +19,12 @@ public class program02 {
 		WebDriver driver;
 		driver=new ChromeDriver();
 		driver.get("https://www.amazon.in/");
-		//WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(30));
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("twotabsearchtextbox")));
+		WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("twotabsearchtextbox")));
 	
-		Wait x=new FluentWait(driver).withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(10));
-		x.until(ExpectedConditions.visibilityOfElementLocated(By.id("twotabsearchtextbox1")));
-		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("oppo"+Keys.ENTER);
+//		Wait x=new FluentWait(driver).withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(10));
+//		x.until(ExpectedConditions.visibilityOfElementLocated(By.id("twotabsearchtextbox1")));
+//		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("oppo"+Keys.ENTER);
 	}
 
 }
