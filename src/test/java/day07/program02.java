@@ -9,7 +9,7 @@ public class program02 {
 	public void testcase05() {
 		System.out.println("testcase-05");
 	}
-	@Test(groups= {"test abc"})
+	@Test(groups= {"test abc","test def"})
 	public void testcase06() {
 		System.out.println("testcase-06");
 	}
